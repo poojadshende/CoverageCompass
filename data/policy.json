@@ -1,0 +1,112 @@
+[
+  {
+    "id": "specialist-cost",
+    "topic": "specialist",
+    "section": "Specialist office visit",
+    "source": "SBC",
+    "page": 2,
+    "summary": "The benefits summary lists a $90 copay per covered specialist visit with a plan provider. The deductible does not apply.",
+    "check": "Confirm the specialist is a plan provider and ask whether additional services will be billed separately.",
+    "tags": "specialist appointment doctor physician office cost copay pay price cardiologist"
+  },
+  {
+    "id": "specialist-ref",
+    "topic": "specialist",
+    "section": "Specialist referrals",
+    "source": "SBC",
+    "page": 1,
+    "summary": "The benefits summary generally requires a referral for specialist visits and allows self-referral to certain specialists.",
+    "check": "Ask the plan whether your specialty allows self-referral and whether any required referral is on file.",
+    "tags": "specialist referral refer self appointment cardiologist"
+  },
+  {
+    "id": "pt-cost",
+    "topic": "therapy",
+    "section": "Outpatient rehabilitation cost-sharing",
+    "source": "SBC",
+    "page": 4,
+    "summary": "The benefits summary lists $50 per covered outpatient rehabilitation visit with a plan provider. The deductible does not apply.",
+    "check": "Confirm the treatment setting and whether the visit is individual or group.",
+    "tags": "physical therapy physiotherapy pt rehab rehabilitation cost pay copay price"
+  },
+  {
+    "id": "pt-rules",
+    "topic": "therapy",
+    "section": "Rehabilitative and Habilitative Services",
+    "source": "EOC",
+    "page": 64,
+    "summary": "Covered rehabilitation addresses a health condition and helps maintain, learn, or improve daily functioning. It takes place at a plan facility unless a plan physician determines another setting is medically necessary.",
+    "check": "Confirm the therapy setting and any plan-specific arrangements with the care team.",
+    "tags": "physical therapy physiotherapy pt rehab rehabilitation occupational speech facility location"
+  },
+  {
+    "id": "pt-group",
+    "topic": "therapy",
+    "section": "Cost Share Summary / Rehabilitation",
+    "source": "EOC",
+    "page": 13,
+    "summary": "The detailed cost table lists $25 per covered outpatient group physical, occupational, or speech therapy visit and $50 per covered individual visit.",
+    "check": "Confirm whether the appointment will be billed as group or individual therapy.",
+    "tags": "group individual physical therapy pt speech occupational cost copay"
+  },
+  {
+    "id": "home-cost",
+    "topic": "home",
+    "section": "Home health care cost-sharing",
+    "source": "SBC",
+    "page": 4,
+    "summary": "The benefits summary lists a $45 copay per covered home health visit with a plan provider. The deductible does not apply.",
+    "check": "Confirm the agency participates in the plan and ask for a member-specific estimate.",
+    "tags": "home health nurse nursing visits discharge cost price copay pay"
+  },
+  {
+    "id": "home-rules",
+    "topic": "home",
+    "section": "Home Health Care / Eligibility",
+    "source": "EOC",
+    "page": 53,
+    "summary": "The policy requires substantial confinement at home, a need for skilled nursing or therapy, a plan physician’s assessment that care can be safely supervised at home, and delivery within the service area.",
+    "check": "Verify the skilled-care need, home setting, service address, and plan physician’s assessment.",
+    "tags": "home health homebound skilled nurse nursing visiting discharge eligibility qualifies"
+  },
+  {
+    "id": "home-limits",
+    "topic": "home",
+    "section": "Home Health Care / Visit limits",
+    "source": "EOC",
+    "page": 53,
+    "summary": "The policy describes intermittent care with up to three visits a day and 100 visits per accumulation period. It generally allows two hours per skilled visit and four hours per home health aide visit, with longer visits counted in increments.",
+    "check": "Confirm how visits count against the limit and how many visits remain.",
+    "tags": "home health visits how many limits per day year hours aide"
+  },
+  {
+    "id": "dme-cost",
+    "topic": "equipment",
+    "section": "Durable medical equipment cost-sharing",
+    "source": "SBC",
+    "page": 4,
+    "summary": "The benefits summary lists 20% coinsurance for covered durable medical equipment through a plan provider, with no deductible and with prior authorization required.",
+    "check": "Verify the item, designated supplier, approval status, and estimated member cost.",
+    "tags": "durable medical equipment dme crutches cane walker nebulizer cost price coinsurance pay"
+  },
+  {
+    "id": "dme-rules",
+    "topic": "equipment",
+    "section": "Durable Medical Equipment for Home Use",
+    "source": "EOC",
+    "page": 48,
+    "summary": "Covered home equipment generally requires a plan physician’s prescription, prior approval, and service within the service area. The plan selects the vendor and decides whether to rent or buy the standard item.",
+    "check": "Verify the prescription, authorization, service area, and plan-selected supplier.",
+    "tags": "dme equipment crutches cane walker nebulizer prior authorization approval prescription rent vendor discharge"
+  },
+  {
+    "id": "dme-list",
+    "topic": "equipment",
+    "section": "Base and supplemental equipment",
+    "source": "EOC",
+    "page": 49,
+    "summary": "Standard crutches and certain canes are on the base equipment list, subject to coverage conditions. A walker does not appear on that list. The policy generally excludes supplemental equipment and describes lactation supplies separately.",
+    "check": "Ask the plan to confirm the exact item and whether any other policy provision applies.",
+    "tags": "walker crutches cane standard base supplemental durable medical equipment dme covered eligible"
+  }
+]

@@ -1,0 +1,330 @@
+{
+  "mode": "local",
+  "route_correct": 15,
+  "questions": 15,
+  "dense_recall_at_2": {
+    "found": 15,
+    "total": 17,
+    "fraction": 0.882
+  },
+  "hybrid_recall_at_2": {
+    "found": 14,
+    "total": 17,
+    "fraction": 0.824
+  },
+  "returned_evidence_recall": {
+    "found": 17,
+    "total": 17,
+    "fraction": 1.0
+  },
+  "median_ms": 5.97,
+  "max_ms": 24.61,
+  "results": [
+    {
+      "role": "patient",
+      "question": "What does a specialist visit cost?",
+      "expected_route": "answer",
+      "actual_route": "answer",
+      "expected_evidence": [
+        "specialist-cost"
+      ],
+      "dense_at_2": [
+        "specialist-cost",
+        "specialist-ref"
+      ],
+      "hybrid_at_2": [
+        "specialist-cost",
+        "specialist-ref"
+      ],
+      "returned_evidence": [
+        "specialist-cost",
+        "specialist-ref"
+      ],
+      "elapsed_ms": 24.61
+    },
+    {
+      "role": "patient",
+      "question": "Do I need a referral to see a specialist?",
+      "expected_route": "answer",
+      "actual_route": "answer",
+      "expected_evidence": [
+        "specialist-ref"
+      ],
+      "dense_at_2": [
+        "specialist-ref",
+        "specialist-cost"
+      ],
+      "hybrid_at_2": [
+        "specialist-ref",
+        "specialist-cost"
+      ],
+      "returned_evidence": [
+        "specialist-ref",
+        "specialist-cost"
+      ],
+      "elapsed_ms": 6.68
+    },
+    {
+      "role": "patient",
+      "question": "How much is outpatient physical therapy?",
+      "expected_route": "answer",
+      "actual_route": "answer",
+      "expected_evidence": [
+        "pt-cost",
+        "pt-group"
+      ],
+      "dense_at_2": [
+        "pt-group",
+        "pt-cost"
+      ],
+      "hybrid_at_2": [
+        "pt-cost",
+        "pt-group"
+      ],
+      "returned_evidence": [
+        "pt-cost",
+        "pt-group",
+        "pt-rules"
+      ],
+      "elapsed_ms": 6.27
+    },
+    {
+      "role": "nurse",
+      "question": "How many home health visits does the policy allow?",
+      "expected_route": "answer",
+      "actual_route": "answer",
+      "expected_evidence": [
+        "home-limits"
+      ],
+      "dense_at_2": [
+        "home-cost",
+        "home-limits"
+      ],
+      "hybrid_at_2": [
+        "home-cost",
+        "home-limits"
+      ],
+      "returned_evidence": [
+        "home-cost",
+        "home-limits",
+        "home-rules"
+      ],
+      "elapsed_ms": 8.16
+    },
+    {
+      "role": "patient",
+      "question": "Does my plan cover a walker?",
+      "expected_route": "answer",
+      "actual_route": "answer",
+      "expected_evidence": [
+        "dme-list"
+      ],
+      "dense_at_2": [
+        "dme-rules",
+        "dme-list"
+      ],
+      "hybrid_at_2": [
+        "dme-list",
+        "dme-rules"
+      ],
+      "returned_evidence": [
+        "dme-list",
+        "dme-rules",
+        "dme-cost"
+      ],
+      "elapsed_ms": 5.62
+    },
+    {
+      "role": "nurse",
+      "question": "What do I need to verify for home health and standard crutches at discharge?",
+      "expected_route": "answer",
+      "actual_route": "answer",
+      "expected_evidence": [
+        "home-rules",
+        "dme-rules",
+        "dme-list"
+      ],
+      "dense_at_2": [
+        "home-rules",
+        "dme-rules"
+      ],
+      "hybrid_at_2": [
+        "home-rules",
+        "dme-rules"
+      ],
+      "returned_evidence": [
+        "home-rules",
+        "dme-rules",
+        "dme-list",
+        "home-cost",
+        "home-limits",
+        "dme-cost"
+      ],
+      "elapsed_ms": 6.7
+    },
+    {
+      "role": "patient",
+      "question": "Does outpatient physical therapy have to be at a plan facility and what does it cost?",
+      "expected_route": "answer",
+      "actual_route": "answer",
+      "expected_evidence": [
+        "pt-rules",
+        "pt-cost"
+      ],
+      "dense_at_2": [
+        "pt-rules",
+        "pt-cost"
+      ],
+      "hybrid_at_2": [
+        "pt-rules",
+        "pt-cost"
+      ],
+      "returned_evidence": [
+        "pt-rules",
+        "pt-cost",
+        "pt-group"
+      ],
+      "elapsed_ms": 5.97
+    },
+    {
+      "role": "patient",
+      "question": "What might I pay for home health and for specialist care?",
+      "expected_route": "answer",
+      "actual_route": "answer",
+      "expected_evidence": [
+        "home-cost",
+        "specialist-cost"
+      ],
+      "dense_at_2": [
+        "home-rules",
+        "home-cost"
+      ],
+      "hybrid_at_2": [
+        "home-rules",
+        "specialist-ref"
+      ],
+      "returned_evidence": [
+        "specialist-ref",
+        "home-rules",
+        "home-cost",
+        "home-limits",
+        "specialist-cost"
+      ],
+      "elapsed_ms": 5.91
+    },
+    {
+      "role": "nurse",
+      "question": "Does equipment require prior authorization and what is the coinsurance?",
+      "expected_route": "answer",
+      "actual_route": "answer",
+      "expected_evidence": [
+        "dme-rules",
+        "dme-cost"
+      ],
+      "dense_at_2": [
+        "dme-rules",
+        "dme-cost"
+      ],
+      "hybrid_at_2": [
+        "dme-cost",
+        "dme-rules"
+      ],
+      "returned_evidence": [
+        "dme-cost",
+        "dme-rules",
+        "dme-list"
+      ],
+      "elapsed_ms": 6.35
+    },
+    {
+      "role": "nurse",
+      "question": "How is group physical therapy priced compared with individual physical therapy?",
+      "expected_route": "answer",
+      "actual_route": "answer",
+      "expected_evidence": [
+        "pt-group"
+      ],
+      "dense_at_2": [
+        "pt-group",
+        "pt-cost"
+      ],
+      "hybrid_at_2": [
+        "pt-group",
+        "pt-cost"
+      ],
+      "returned_evidence": [
+        "pt-group",
+        "pt-cost",
+        "pt-rules"
+      ],
+      "elapsed_ms": 6.68
+    },
+    {
+      "role": "patient",
+      "question": "Will my insurance cover it?",
+      "expected_route": "clarify",
+      "actual_route": "clarify",
+      "expected_evidence": [],
+      "dense_at_2": [],
+      "hybrid_at_2": [],
+      "returned_evidence": [],
+      "elapsed_ms": 2.79
+    },
+    {
+      "role": "nurse",
+      "question": "Was the equipment request already approved?",
+      "expected_route": "confirm",
+      "actual_route": "confirm",
+      "expected_evidence": [
+        "dme-rules"
+      ],
+      "dense_at_2": [
+        "dme-rules",
+        "dme-list"
+      ],
+      "hybrid_at_2": [
+        "dme-rules",
+        "dme-list"
+      ],
+      "returned_evidence": [
+        "dme-rules",
+        "dme-list",
+        "dme-cost"
+      ],
+      "elapsed_ms": 5.51
+    },
+    {
+      "role": "patient",
+      "question": "What is my remaining deductible?",
+      "expected_route": "confirm",
+      "actual_route": "confirm",
+      "expected_evidence": [],
+      "dense_at_2": [],
+      "hybrid_at_2": [],
+      "returned_evidence": [],
+      "elapsed_ms": 2.47
+    },
+    {
+      "role": "patient",
+      "question": "Does my plan cover dental implants?",
+      "expected_route": "out_of_scope",
+      "actual_route": "out_of_scope",
+      "expected_evidence": [],
+      "dense_at_2": [],
+      "hybrid_at_2": [],
+      "returned_evidence": [],
+      "elapsed_ms": 2.8
+    },
+    {
+      "role": "patient",
+      "question": "Does the 2027 policy cover home health?",
+      "expected_route": "out_of_scope",
+      "actual_route": "out_of_scope",
+      "expected_evidence": [],
+      "dense_at_2": [],
+      "hybrid_at_2": [],
+      "returned_evidence": [],
+      "elapsed_ms": 2.62
+    }
+  ]
+}

@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Coverage Compass</title>
+<style>
+:root{color-scheme:light;--ink:#14352f;--muted:#48635d;--green:#176451;--line:#d8e5df;--paper:#fff;--mint:#e7f3eb}
+*{box-sizing:border-box}body{margin:0;background:#f5f8f4;color:var(--ink);font:16px/1.55 system-ui,sans-serif}header{background:#103d34;color:white}nav,main{max-width:930px;margin:auto;padding:0 24px}nav{display:flex;align-items:center;justify-content:space-between;min-height:67px;gap:12px}nav strong{font-size:19px}nav span{font-size:13px;color:#daebe3}main{padding-top:38px;padding-bottom:48px}.eyebrow{font-size:12px;font-weight:750;letter-spacing:.12em;text-transform:uppercase;color:var(--green);margin:0}h1{font-size:clamp(31px,6vw,48px);line-height:1.12;letter-spacing:-.045em;margin:8px 0 12px}p{margin:0 0 12px}.intro{color:var(--muted);max-width:60ch}.panel,article{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:22px;margin-top:20px}.top{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}.roles{display:flex;background:#edf3ef;border-radius:999px;padding:4px;gap:4px}button{font:inherit;cursor:pointer}button:focus-visible,a:focus-visible,textarea:focus-visible{outline:3px solid #368d79;outline-offset:3px}.roles button,.sample{color:var(--green);background:transparent;border:1px solid transparent;border-radius:999px;padding:6px 13px;font-size:14px}.roles button[aria-pressed=true]{background:white;color:var(--ink);border-color:var(--line);font-weight:700}.plan{font-size:13px;color:var(--muted)}label{display:block;font-weight:700;margin:15px 0 6px}textarea{width:100%;min-height:105px;resize:vertical;border:1px solid #abc2b7;border-radius:12px;background:#fbfdfb;padding:12px;color:var(--ink);font:inherit}.samples{display:flex;flex-wrap:wrap;gap:7px;margin-top:10px}.sample{background:var(--mint)}.action{display:flex;align-items:center;gap:14px;margin-top:16px;flex-wrap:wrap}.submit{border:0;background:var(--green);color:#fff;padding:10px 18px;border-radius:10px;font-weight:700}.submit:disabled{opacity:.65;cursor:wait}.small{font-size:13px;color:var(--muted)}.status{color:var(--muted);margin:12px 0 0}.status:empty{display:none}h2{font-size:24px;margin:2px 0 8px;line-height:1.2}h3{font-size:16px;margin:0 0 5px}.question{color:var(--muted);white-space:pre-wrap}.source{border-top:1px solid var(--line);padding-top:12px;margin-top:12px}.source p{margin:5px 0}.source a{color:var(--green);font-weight:700;font-size:13px}.source .check{color:var(--muted)}footer{margin-top:22px}.badge{font-size:12px;color:var(--green);font-weight:700;letter-spacing:.04em}
+</style>
+<style>
+body{background:radial-gradient(ellipse at 94% 12%,#e1f1e8 0,transparent 44%),#f5f8f4}
+header{background:#113d35}.brand{display:flex;align-items:center;gap:10px}.mark{display:inline-grid;place-items:center;width:32px;height:32px;border:1px solid #8fc7b0;border-radius:11px;background:#225a4c;color:#e6ffef;font-size:17px}
+.hero{border-bottom:1px solid var(--line);padding-bottom:17px}.plan{background:#eef6f0;padding:5px 10px;border-radius:999px}.panel,article{box-shadow:0 8px 26px #123c2b09}.tech{margin-top:15px;padding:12px 15px;background:#f0f7f2;border:1px solid var(--line);border-radius:12px}.tech summary{font-weight:700;cursor:pointer;color:var(--green)}.tech p{margin:9px 0 2px;overflow-wrap:anywhere}.mode{display:inline-block;margin:4px 0 8px;color:var(--green);font-size:13px;font-weight:700}.source{scroll-margin-top:15px}
+</style>
+</head>
+<body>
+<header><nav><strong class="brand"><span class="mark" aria-hidden="true">✦</span>Coverage Compass</strong><span>Health plan navigator</span></nav></header>
+<main>
+<div class="hero">
+<p class="eyebrow">Benefits and care coordination</p>
+<h1>Understand what your plan covers.</h1>
+<p class="intro">Look up benefits, coverage conditions, and questions to confirm before arranging care. Each policy answer links to its source.</p>
+</div>
+<form class="panel" id="form">
+  <div class="top">
+    <div class="roles" role="group" aria-label="Answer format">
+      <button type="button" data-role="patient" aria-pressed="true">Patient</button>
+      <button type="button" data-role="nurse" aria-pressed="false">Nurse</button>
+    </div>
+    <span class="plan">2026 Kaiser Permanente · Covered CA Silver 70 HMO</span>
+  </div>
+  <label for="question">What would you like to check?</label>
+  <textarea id="question" required minlength="2" maxlength="600" placeholder="What does the plan say about physical therapy?"></textarea>
+  <div class="samples" id="samples" aria-label="Example questions"></div>
+  <div class="action"><button class="submit" id="submit">Check coverage</button><span class="small">Use a fictional scenario. Leave out names, member IDs, and medical records.</span></div>
+  <p class="status" id="status" role="status"></p>
+</form>
+<section id="answers" aria-label="Coverage answers" aria-live="polite"></section>
+<footer class="small">Policy snapshot for a class project · {{ mode }} mode. Contact Member Services for individual benefits, approvals, or bills.</footer>
+</main>
+<script>
+let role = "patient";
+const prompts = {
+  patient: [["Physical therapy costs","What does outpatient physical therapy cost?"],["Specialist referral","Do I need a referral for a specialist?"],["Crutches coverage","What does the plan say about standard crutches and what might I pay?"]],
+  nurse: [["Discharge checklist","For discharge, what should I verify for home health and standard crutches?"],["Home health limits","How many home health visits does the policy allow?"],["Equipment approval","Was the equipment request already approved?"]]
+};
+const form = document.querySelector("#form");
+const question = document.querySelector("#question");
+const status = document.querySelector("#status");
+const submit = document.querySelector("#submit");
+const answers = document.querySelector("#answers");
+const samples = document.querySelector("#samples");
+const roleButtons = document.querySelectorAll("[data-role]");
+function element(tag,text,cls){
+  const node=document.createElement(tag);
+  if(text) node.textContent=text;
+  if(cls) node.className=cls;
+  return node;
+}
+function updateSamples(){
+  samples.replaceChildren();
+  for(const [label,value] of prompts[role]){
+    const button=element("button",label,"sample");
+    button.type="button";
+    button.onclick=()=>{question.value=value;question.focus()};
+    samples.append(button);
+  }
+}
+for(const button of roleButtons){
+  button.onclick=()=>{
+    role=button.dataset.role;
+    for(const option of roleButtons) option.setAttribute("aria-pressed",String(option===button));
+    updateSamples();
+  };
+}
+updateSamples();
+function render(result,query){
+  const article=element("article");
+  article.append(element("div",result.role==="nurse"?"NURSE · CARE COORDINATION":"PATIENT · BENEFIT EXPLANATION","badge"),
+                 element("p",query,"question"),element("h2",result.title),element("div",result.mode,"mode"),element("p",result.message));
+  const trace=element("details",null,"tech");
+  trace.append(element("summary","Inspect retrieval and routing"),
+               element("p","LangGraph route: "+result.route+" · Services: "+(result.trace.topics.join(", ")||"none")),
+               element("p","Chunking: policy sections and benefit rows · Embedding: "+result.trace.embedding),
+               element("p","Search: vector similarity + BM25, combined using reciprocal rank fusion."),
+               element("p","Hybrid rank: "+(result.trace.ranked.join(" → ")||"retrieval skipped")),
+               element("p","Selected for response: "+(result.cards.map(card=>card.id).join(", ")||"no policy claims")));
+  article.append(trace);
+  for(const card of result.cards){
+    const item=element("div",null,"source");
+    item.append(element("h3",card.section));
+    if(result.role==="nurse") item.append(element("p","☐ "+card.check),element("p",card.text,"check"));
+    else item.append(element("p",card.text),element("p","Next step: "+card.check,"check"));
+    const link=element("a","Read "+card.citation+" ↗");
+    link.href=card.url;link.target="_blank";link.rel="noopener noreferrer";
+    item.append(link);article.append(item);
+  }
+  answers.prepend(article);
+}
+form.addEventListener("submit",async (event)=>{
+  event.preventDefault();
+  const query=question.value.trim();
+  submit.disabled=true;
+  status.textContent="Checking policy sources…";
+  try{
+    const response=await fetch("/api/ask",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({question:query,role})});
+    const result=await response.json();
+    if(!response.ok) throw new Error(result.error);
+    render(result,query);
+    status.textContent="Answer ready.";
+  }catch(error){status.textContent=error.message||"Could not complete the policy lookup. Try again."}
+  finally{submit.disabled=false}
+});
+</script>
+</body>
+</html>

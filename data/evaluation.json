@@ -1,0 +1,120 @@
+[
+  [
+    "patient",
+    "What does a specialist visit cost?",
+    "answer",
+    [
+      "specialist-cost"
+    ]
+  ],
+  [
+    "patient",
+    "Do I need a referral to see a specialist?",
+    "answer",
+    [
+      "specialist-ref"
+    ]
+  ],
+  [
+    "patient",
+    "How much is outpatient physical therapy?",
+    "answer",
+    [
+      "pt-cost",
+      "pt-group"
+    ]
+  ],
+  [
+    "nurse",
+    "How many home health visits does the policy allow?",
+    "answer",
+    [
+      "home-limits"
+    ]
+  ],
+  [
+    "patient",
+    "Does my plan cover a walker?",
+    "answer",
+    [
+      "dme-list"
+    ]
+  ],
+  [
+    "nurse",
+    "What do I need to verify for home health and standard crutches at discharge?",
+    "answer",
+    [
+      "home-rules",
+      "dme-rules",
+      "dme-list"
+    ]
+  ],
+  [
+    "patient",
+    "Does outpatient physical therapy have to be at a plan facility and what does it cost?",
+    "answer",
+    [
+      "pt-rules",
+      "pt-cost"
+    ]
+  ],
+  [
+    "patient",
+    "What might I pay for home health and for specialist care?",
+    "answer",
+    [
+      "home-cost",
+      "specialist-cost"
+    ]
+  ],
+  [
+    "nurse",
+    "Does equipment require prior authorization and what is the coinsurance?",
+    "answer",
+    [
+      "dme-rules",
+      "dme-cost"
+    ]
+  ],
+  [
+    "nurse",
+    "How is group physical therapy priced compared with individual physical therapy?",
+    "answer",
+    [
+      "pt-group"
+    ]
+  ],
+  [
+    "patient",
+    "Will my insurance cover it?",
+    "clarify",
+    []
+  ],
+  [
+    "nurse",
+    "Was the equipment request already approved?",
+    "confirm",
+    [
+      "dme-rules"
+    ]
+  ],
+  [
+    "patient",
+    "What is my remaining deductible?",
+    "confirm",
+    []
+  ],
+  [
+    "patient",
+    "Does my plan cover dental implants?",
+    "out_of_scope",
+    []
+  ],
+  [
+    "patient",
+    "Does the 2027 policy cover home health?",
+    "out_of_scope",
+    []
+  ]
+]
